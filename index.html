@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THỜI TRANG NỮ GB</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .navbar {
+      background-color: #fff;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .banner {
+      background-image: url("./img/banner.jpg");
+      background-size: cover;
+      height: 550px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .banner-content {
+      padding: 20px;
+    }
+
+    .products {
+      margin-top: 30px;
+    }
+
+    .product-info {
+      text-align: center;
+    }
+
+    .footer {
+      background-color: #f7f7f7;
+      padding: 20px 0;
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .dropdown-menu .product-list {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      list-style: none;
+      left: 120px;
+    }
+
+    .dropdown-item:hover .product-list {
+      display: block;
+    }
+
+    .dropdown-menu .product-list img {
+      width: 100px;
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    .modal-body .cart-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .modal-body .cart-item .row {
+      font-size: 1.1em;
+    }
+
+    .modal-body .cart-item .item-name {
+      font-weight: bold;
+    }
+
+    .modal-body .cart-item .item-price {
+      text-align: right;
+    }
+
+    #cart-success-message {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+    }
+  </style>
+
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img src="./img/logo.jpg" alt="" width="50px" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sản phẩm mới</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Đẹp nhất</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Quần áo nữ
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="dropdown-item">
+                  <a href="#">Áo dài</a>
+                  <ul class="product-list">
+                    <li>
+                      <img src="./img/aodai1.jpg" alt="Áo dài truyền thống" />
+                    </li>
+                    <li>
+                      <img src="./img/aodai2.jpg" alt="Áo dài cách tân" />
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="#">Áo thun</a>
+                  <ul class="product-list">
+                    <li>
+                      <img src="./img/aothun1.avif" alt="Áo thun 1" />
+                    </li>
+                    <li>
+                      <img src="./img/aothun2.avif" alt="Áo thun 2" />
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="dropdown-item">
+                  <a href="#">Quần jean</a>
+                  <ul class="product-list">
+                    <li>
+                      <img src="./img/jean1.avif" alt="Quần jean 1" />
+                    </li>
+                    <li>
+                      <img src="./img/jean2.avif" alt="Quần jean 2" />
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Đồng hồ
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li class="dropdown-item">
+                  <a href="#">Đồng hồ dây da</a>
+                  <ul class="product-list">
+                    <li>
+                      <img src="./img/dayda1.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/dayda2.jpg" alt="" />
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#">Đồng hồ dây kim loại</a>
+                  <ul class="product-list">
+                    <li>
+                      <img src="./img/daykimloai1.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/daykimloai2.jpg" alt="" />
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Tìm kiếm"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Tìm kiếm
+            </button>
+          </form>
+          <button id="btnCart" class="btn btn-primary ms-2">Giỏ hàng</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+              <div class="banner-content">
+                <h2>MUA 2 TẶNG 1</h2>
+                <p>Giảm thêm 15% với mã: HGB</p>
+                <a href="#" class="btn btn-primary" id="btnModal">Đăng kí ngay để mua</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="container">
+          <h2>Thời trang bán chạy</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product">
+                <img src="./img/aoThun.avif" alt="" class="img-fluid" />
+                <div class="product-info">
+                  <h4>Áo thun tay ngắn basic</h4>
+                  <p>129.000đ</p>
+                  <button
+                    class="btn btn-primary add-to-cart-btn"
+                    data-product-name="Áo thun tay ngắn basic"
+                    data-product-price="129000"
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product">
+                <img src="./img/quanJean.avif" alt="" class="img-fluid" />
+                <div class="product-info">
+                  <h4>Quần jean rách gối</h4>
+                  <p>299.000đ</p>
+                  <button
+                    class="btn btn-primary add-to-cart-btn"
+                    data-product-name="Quần jean rách gối"
+                    data-product-price="299000"
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product">
+                <img src="./img/chanVay.jpg" alt="" class="img-fluid" />
+                <div class="product-info">
+                  <h4>Chân váy</h4>
+                  <p>359.000đ</p>
+                  <button
+                    class="btn btn-primary add-to-cart-btn"
+                    data-product-name="Chân váy"
+                    data-product-price="359000"
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <h2>Về GB</h2>
+          <p>
+            GB là thương hiệu thời trang trực tuyến toàn cầu mang đến cho bạn
+            những xu hướng thời trang mới nhất với giá cả phải chăng. Chúng tôi
+            cung cấp nhiều loại sản phẩm cho nam, nữ và trẻ em, bao gồm quần áo,
+            giày dép, phụ kiện và trang sức. GB cam kết mang đến trải nghiệm mua
+            sắm tuyệt vời cho khách hàng với dịch vụ khách hàng chu đáo và chính
+            sách đổi trả linh hoạt.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-center">&copy; 2024 GB. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Đăng ký</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input type="tel" class="form-control" id="phone" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label"
+                  >Xác nhận mật khẩu</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Đăng ký</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+            <div
+              id="successMessage"
+              class="alert alert-success d-none mt-3"
+              role="alert"
+            >
+              Đăng ký thành công!
+            </div>
+            <button id="registerAgain" class="btn btn-primary mt-3 d-none">
+              Đăng ký lại
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart-items" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Giỏ hàng</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul id="cart-list" class="list-unstyled"></ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button id="btnPayment" type="button" class="btn btn-success">
+              Thanh toán
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="paymentModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thanh toán</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Tổng số tiền cần thanh toán: <span id="totalAmount"></span></p>
+            <form id="paymentForm">
+              <div class="mb-3">
+                <label for="bankSelect" class="form-label">Ngân hàng</label>
+                <select class="form-select" id="bankSelect" required>
+                  <option value="Vietcombank">Vietcombank</option>
+                  <option value="Techcombank">Techcombank</option>
+                  <option value="BIDV">BIDV</option>
+                  <option value="VietinBank">VietinBank</option>
+                  <option value="ACB">ACB</option>
+                  <option value="TPBank">TPBank</option>
+                  <option value="MBBank">MBBank</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label"
+                  >Số thẻ ngân hàng</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardNumber"
+                  required
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Xác nhận thanh toán
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="cart-success-message"
+      class="alert alert-success d-none"
+      role="alert"
+    >
+      Đã thêm vào giỏ hàng!
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".add-to-cart-btn").click(function () {
+          var productName = $(this).data("product-name");
+          var productPrice = $(this).data("product-price");
+          var cartItemHtml =
+            '<li class="cart-item">' +
+            '<div class="row">' +
+            '<div class="col-6">' +
+            '<span class="item-name">' +
+            productName +
+            "</span>" +
+            "</div>" +
+            '<div class="col-4">' +
+            '<span class="item-price">' +
+            productPrice +
+            "</span>" +
+            "</div>" +
+            '<div class="col-2">' +
+            '<button class="btn btn-danger btn-sm remove-from-cart-btn">Xóa</button>' +
+            "</div>" +
+            "</div>" +
+            "</li>";
+          $("#cart-list").append(cartItemHtml);
+
+          $("#cart-success-message")
+            .removeClass("d-none")
+            .fadeIn()
+            .delay(2000)
+            .fadeOut();
+        });
+
+        $("#btnModal").click(function () {
+          $("#myModal").modal("show");
+        });
+        $("#registerAgain").click(function () {
+          $("#registerForm").show();
+          $("#successMessage").addClass("d-none");
+          $(this).addClass("d-none");
+        });
+
+        $("#registerForm").submit(function (event) {
+          var isValid = true;
+          var fullName = $("#fullName").val();
+          var fullNamePattern = /[0-9]/;
+          if (fullNamePattern.test(fullName)) {
+            alert("Họ và tên không được chứa số.");
+            isValid = false;
+          }
+
+          var password = $("#password").val();
+          var confirmPassword = $("#confirmPassword").val();
+          if (password != confirmPassword) {
+            alert("Mật khẩu và xác nhận mật khẩu không khớp.");
+            isValid = false;
+          }
+
+          var phonePattern = /^[0-9]{10}$/;
+          var phone = $("#phone").val();
+          if (!phonePattern.test(phone)) {
+            alert("Số điện thoại không hợp lệ.");
+            isValid = false;
+          }
+
+          if (isValid) {
+            $("#successMessage").removeClass("d-none");
+            $("#myModal").modal("hide");
+            $("#registerForm").hide();
+            $("#registerAgain").removeClass("d-none");
+          }
+          event.preventDefault();
+        });
+
+        $("#btnCart").click(function () {
+          $("#cart-items").modal("show");
+        });
+
+        $("#btnPayment").click(function () {
+          var totalAmount = 0;
+          $(".item-price").each(function () {
+            totalAmount += parseFloat(
+              $(this)
+                .text()
+                .replace(/[^\d.-]/g, "")
+            );
+          });
+          $("#totalAmount").text(
+            totalAmount.toLocaleString("vi-VN", {
+              style: "currency",
+              currency: "VND",
+            })
+          );
+          $("#paymentModal").modal("show");
+        });
+
+        $("#paymentForm").submit(function (event) {
+          alert("Thanh toán thành công!");
+          $("#paymentModal").modal("hide");
+          $("#cart-items").modal("hide");
+          $("#cart-list").empty();
+          event.preventDefault();
+        });
+
+        $(document).on("click", ".remove-from-cart-btn", function () {
+          $(this).closest(".cart-item").remove();
+        });
+      });
+      $("#btnPayment").click(function () {
+        if ($("#cart-list li").length === 0) {
+          alert(
+            "Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán."
+          );
+          return;
+        }
+        var totalAmount = 0;
+        $(".item-price").each(function () {
+          totalAmount += parseFloat(
+            $(this)
+              .text()
+              .replace(/[^\d.-]/g, "")
+          );
+        });
+        $("#totalAmount").text(
+          totalAmount.toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+          })
+        );
+        $("#paymentModal").modal("show");
+      });
+      $("#paymentModal").on("show.bs.modal", function (e) {
+        if ($("#cart-list li").length === 0) {
+          e.preventDefault();
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
